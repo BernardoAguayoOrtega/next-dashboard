@@ -2,6 +2,17 @@ import { BsHouse } from "react-icons/bs";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import SidebarItem from "./SidebarItem";
 
+const listItems = [
+  {
+    icon: <BsHouse className='w-6 h-6' />,
+    text: 'Dashboards',
+  },
+  {
+    icon: <BsChevronDoubleDown className='w-6 h-6' />,
+    text: 'Counter',
+  },
+];
+
 export default function Sidebar() {
   return (
     <div className='flex'>
@@ -12,14 +23,9 @@ export default function Sidebar() {
           </h5>
         </div>
         <nav className='flex flex-col gap-1 min-w-[240px] p-2 font-sans text-base font-normal text-gray-700'>
-          <SidebarItem 
-            icon={<BsHouse className='w-6 h-6' />} 
-            text="Dashboards" 
-          />
-          <SidebarItem 
-            icon={<BsChevronDoubleDown className='w-6 h-6' />} 
-            text="Counter" 
-          />
+          {listItems.map((item, index) => (
+            <SidebarItem key={index} icon={item.icon} text={item.text} />
+          ))}
         </nav>
       </div>
     </div>
