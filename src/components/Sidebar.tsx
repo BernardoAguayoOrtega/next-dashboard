@@ -2,14 +2,25 @@ import { BsHouse } from "react-icons/bs";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import SidebarItem from "./SidebarItem";
 
-const listItems = [
+type item = {
+  icon: JSX.Element;
+  text: string;
+  path: string;
+  description: string;
+};
+
+const listItems: item[] = [
   {
     icon: <BsHouse className='w-6 h-6' />,
     text: 'Dashboards',
+    path: '/',
+    description: 'This is the main page',
   },
   {
     icon: <BsChevronDoubleDown className='w-6 h-6' />,
     text: 'Counter',
+    path: '/',
+    description: 'This is the counter page',
   },
 ];
 
@@ -24,7 +35,7 @@ export default function Sidebar() {
         </div>
         <nav className='flex flex-col gap-1 min-w-[240px] p-2 font-sans text-base font-normal text-gray-700'>
           {listItems.map((item, index) => (
-            <SidebarItem key={index} icon={item.icon} text={item.text} />
+            <SidebarItem key={index} description={item.description} path={item.path} icon={item.icon} text={item.text} />
           ))}
         </nav>
       </div>
