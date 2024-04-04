@@ -14,13 +14,13 @@ const listItems: item[] = [
   {
     icon: <BsHouse className='w-6 h-6' />,
     text: 'Dashboards',
-    path: '/',
+    path: '/dashboard',
     description: 'This is the main page',
   },
   {
     icon: <BsChevronDoubleDown className='w-6 h-6' />,
     text: 'Counter',
-    path: '/',
+    path: '/dashboard/counter',
     description: 'This is the counter page',
   },
 ];

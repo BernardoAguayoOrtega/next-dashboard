@@ -1,4 +1,7 @@
+"use client";
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface SidebarItem {
   icon: JSX.Element;
@@ -15,6 +18,7 @@ export default function SidebarItem({
   onClick,
   description,
 }: SidebarItem): JSX.Element {
+  const currentPath = usePathname();
   return (
     <Link href={path}>
       <span
