@@ -2,7 +2,6 @@ import { BsHouse } from "react-icons/bs";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import SidebarItem from "./SidebarItem";
 import React from "react";
-import { useRouter } from "next/router";
 
 type item = {
   icon: JSX.Element;
@@ -27,14 +26,6 @@ const listItems: item[] = [
 ];
 
 export default function Sidebar(): JSX.Element {
-  const router = useRouter();
-  const [selected, setSelected] = React.useState<string>(router.pathname);
-  console.log('selected::: ', selected);
-
-  React.useEffect(() => {
-    setSelected(router.pathname); // Update the selected state when the path changes
-  }, [router.pathname]);
-
   return (
     <div className='flex'>
       <div className='relative flex flex-col bg-white text-gray-700 h-[calc(100vh)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5'>
