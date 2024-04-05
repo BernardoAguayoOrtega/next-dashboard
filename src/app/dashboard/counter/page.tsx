@@ -14,13 +14,13 @@ export default function CounterPage(): JSX.Element {
       <div className='flex space-x-5'>
         <button
           className='flex items-center justify-center p-2 rounded-xl bg-gray-900 text-white hover:bg-gray-400 transition-all w-[100px] mr2'
-          onClick={() => setCount((prevState) => prevState + 1)}>
-          +1
+          onClick={() => setCount((prevState) => prevState - 1)}>
+          -1
         </button>
         <button
           className='flex items-center justify-center p-2 rounded-xl bg-gray-900 text-white hover:bg-gray-400 transition-all w-[100px] mr2'
-          onClick={() => setCount((prevState) => prevState - 1)}>
-          -1
+          onClick={() => setCount((prevState) => prevState + 1)}>
+          +1
         </button>
       </div>
     </div>
